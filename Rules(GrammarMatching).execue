@@ -1,0 +1,8 @@
+rule statement {
+    match keyword followed_by operand
+}
+
+rule loop {
+    start_token: "loop"
+    end_token: "}"
+}
