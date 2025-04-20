@@ -1,0 +1,9 @@
+panic_trace {
+    capture_state()
+    emit_log("panic")
+    flush()
+}
+recovery_fallbacks {
+    test recovery_chain
+    activate last_safe_dominion
+}
