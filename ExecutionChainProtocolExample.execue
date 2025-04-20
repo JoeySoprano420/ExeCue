@@ -1,0 +1,9 @@
+routine signal_bridge {
+    start_cycle()
+    chain dominion_path from master_link {
+        fork to echo_response
+        fork to fault_filter
+        if overflow() fork to trace_probe
+    }
+    execute_chain(signal_level_5)
+}
