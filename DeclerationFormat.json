@@ -1,0 +1,16 @@
+{
+  "dominions": [
+    {
+      "id": "alpha",
+      "capacity": 128,
+      "type": "volatile",
+      "auto_bind": true
+    },
+    {
+      "id": "omega",
+      "capacity": 512,
+      "type": "secure",
+      "auto_bind": false
+    }
+  ]
+}
