@@ -1,0 +1,8 @@
+{
+  "name": "EXECUE",
+  "version": "1.0",
+  "author": "VAC Systems",
+  "license": "Open VACU Execution License v1.0",
+  "description": "Opcode-based reactive language for embedded dominion systems.",
+  "entrypoint": "core/runtime.exu"
+}
