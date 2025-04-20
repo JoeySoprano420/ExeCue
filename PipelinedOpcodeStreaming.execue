@@ -1,0 +1,5 @@
+stream_packet "RENDER_PACKET_X2" {
+    encode: op_write
+    bind: dominion BETA
+    route: forced_pipeline[3]
+}
