@@ -1,0 +1,71 @@
+@meta(
+    author: "VAC Dev Protocol",
+    version: "0.9.7-prelude",
+    codename: "SurgeScript"
+)
+
+@compile(target: "x86_64", optimize: true, fold: true)
+@virtualMemory(["bootstrapMemory", "directiveLinker"])
+@hotRoute
+@chain([bootload, initialize, launchCore])
+
+@start
+main() {
+    bootload();
+    initialize();
+    launchCore();
+}
+
+// 🔸 Phase 1: Bootloader
+@priority(critical)
+function bootload() {
+    log("⇨ BOOTLOADER ENGAGED...");
+    inject("directives/core.exu");
+    inject("modules/render.exu");
+    prepareMemoryMap();
+    mountFileSystem("execue.fsx");
+}
+
+// 🔸 Phase 2: System Initialization
+@priority(high)
+@optimize(AOT)
+function initialize() {
+    log("⇨ INITIALIZING SYSTEM COMPONENTS...");
+    
+    config core = loadConfig("config/core.json");
+    bindSubsystems(core.subsystems);
+
+    if (!validate(core.integrity)) {
+        throw SystemIntegrityError("Core config failed verification");
+    }
+
+    preloadModules([
+        "sensorBridge.exu",
+        "executionRouter.exu",
+        "renderPipeline.exu"
+    ]);
+}
+
+// 🔸 Phase 3: Core Execution Launch
+@renderPipeline(force)
+@executionMode(stream)
+function launchCore() {
+    log("⇨ LAUNCHING EXECUTION CORE...");
+
+    task execController = spawn("tasks/controller.exu");
+    stream execFlow = openStream(execController, mode: "distributed");
+
+    while (execFlow.active) {
+        pulse = execFlow.read();
+        handlePulse(pulse);
+    }
+}
+
+// 🛠 Pulse Handler
+function handlePulse(pulseData) {
+    if (pulseData.critical) {
+        routeTo("failsafe.exu");
+    } else {
+        routeTo("routing/mainRoute.exu");
+    }
+}
