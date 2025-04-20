@@ -1,0 +1,37 @@
+frame blueprint:
+    resolution: 1440x900
+    latency_ns: 4
+
+virtual_chip:
+    memsize: 65536
+
+dominion VelvetZone:
+    region: 0x00500000-0x0050FFFF
+    weight: 0.8
+    latency_ns: 2
+
+opcode_chain RitualSummon:
+    SYNC scent_core
+    PULSE desire_torque
+    INHALE Noctoria
+    BIND perfume_echo
+
+hotroute:
+    from SYNC to PULSE
+    from PULSE to INHALE
+    from INHALE to BIND
+
+DOMINATE dominion VelvetZone for opcode_chain RitualSummon
+
+fuse opcode_chain PhaseShift:
+    DISPLACE
+    OVERLAY
+    GLIDE
+
+force EchoLoop:
+    cycle_persist: 5
+    fallback: RitualSummon
+
+on error:
+    if INHALE then PhaseShift
+    if BIND then EchoLoop
