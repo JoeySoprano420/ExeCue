@@ -1,0 +1,5 @@
+opcode error_log {
+    write "ERR" to log_stack
+    snapshot dominion_state
+    flush_cache()
+}
