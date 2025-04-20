@@ -1,4 +1,4 @@
-Absolutely. Here's a full **Execue Syntax Sheet** — giving you a clear, comprehensive view of the structure, rules, and stylistic constructs used in the **Execue** language.
+Here's a full **Execue Syntax Sheet** — giving you a clear, comprehensive view of the structure, rules, and stylistic constructs used in the **Execue** language.
 
 ---
 
