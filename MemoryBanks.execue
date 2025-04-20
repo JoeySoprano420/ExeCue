@@ -1,0 +1,10 @@
+dominions {
+    alpha {
+        capacity: 128
+        volatile: true
+    },
+    beta {
+        capacity: 256
+        locked: true
+    }
+}
