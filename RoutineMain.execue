@@ -1,0 +1,9 @@
+routine main {
+    start_cycle()           // Clock ticks for the first time
+    bind_dominions()       // Load memory sanctums into executable phase
+    loop opcode_queue {    // Until silence breaks
+        execute()          // Perform the next whisper
+        if error() then handle() // Grace under glitch
+    }
+    flush()                // The final breath
+}
