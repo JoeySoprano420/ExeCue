@@ -1,0 +1,8 @@
+loop [opcode_queue] {
+    ...
+}
+if error() then handle()
+switch dominion_state {
+    case STABLE: continue()
+    case PANIC: snapshot; flush()
+}
