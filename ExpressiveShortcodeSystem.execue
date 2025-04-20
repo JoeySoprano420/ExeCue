@@ -1,0 +1,6 @@
+shortcode turbo_trace {
+    @pipe dominion "ALPHA" through opcode_stack
+    @fold inline operations
+    @packetize output
+    @flush dominion residue
+}
