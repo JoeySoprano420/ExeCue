@@ -1,0 +1,15 @@
+routine startup {
+    start_cycle()
+    allocate dominion alpha
+    bind dominion alpha
+    write 0x7A to dominion alpha at 0x00FF
+    jump if dominion alpha == 0x7A to stable_loop
+}
+
+opcode stable_loop {
+    loop opcode_queue {
+        execute()
+        if error() then invoke error_log
+    }
+    flush()
+}
