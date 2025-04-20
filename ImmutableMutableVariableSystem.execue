@@ -1,0 +1,2 @@
+const link_status: immutable<volatile_bit> = 0x01
+mut thread_pool<dominion_thread> = pool.fetch_ready()
