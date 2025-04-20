@@ -1,0 +1,5 @@
+opcode error_log {
+    write "ERR" to log_stack       // Record the scream
+    snapshot dominion_state        // Remember the fall
+    flush_cache()                  // Wipe the tears
+}
