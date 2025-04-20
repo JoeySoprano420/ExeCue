@@ -1,0 +1,12 @@
+routine dominion_warp_sync {
+    @start
+    bind dominion AURORA as virtual_chip_mem
+    allocate thread<3> into dominion_flow
+    fork execution_chain {
+        path_A { stream packetize read_ops; }
+        path_B { loop hot_routes; flush dominion trail; }
+        path_C { if fail then trap frame_error 41; }
+    }
+    finish_stream
+    end_cycle
+}
