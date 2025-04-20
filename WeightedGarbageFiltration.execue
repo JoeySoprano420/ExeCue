@@ -1,0 +1,4 @@
+filter dominion_bank {
+    if age > 250ms and usage_score < 3 then mark_for_eject
+    else reprioritize
+}
