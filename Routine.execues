@@ -1,0 +1,9 @@
+routine main {
+    start_cycle()
+    bind_dominions()
+    loop opcode_queue {
+        execute()
+        if error() then handle()
+    }
+    flush()
+}
