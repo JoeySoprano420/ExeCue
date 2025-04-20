@@ -1,0 +1,5 @@
+frame_error trap_memory_collision {
+    blueprint: dominion_map.yaml
+    fallback: safe_link_alpha
+    render: error_vector[23]
+}
