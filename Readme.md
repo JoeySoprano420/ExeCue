@@ -2162,3 +2162,30 @@ EXECUTAR V1.0 - Full Uncut Package Set
 “From Thought to Thread in One Breathless Stream.”
 
 “Rigid in Form. Ruthless in Flow.”
+
+
+
+
+🔹 Core Source Files
+
+Extension	Purpose	Notes
+.exu	EXECUE Unit File	Core logic unit—contains routines, opcode chains, dominion instructions, or compiled logic. Main execution scripts.
+.dmu	Dominion Module Unit	Subsystem module bound to dominion domains (memory, IO, protocols). Used for modular layering.
+.cxu	Core Execution Unit	For core-level and chipset-sequenced logic. Usually bound to core/, interpreter/, compiler/ trees.
+.sco	Shortcode	EXECUE+ expressive abstraction—high-level, terse syntax that AOT-transpiles into .exu.
+.blx	Blueprint Logic XML	Static structure definitions, error blueprints, execution chains, or state graphs. Used for validation and debug visualization.
+🔸 Build + Runtime Files
+
+Extension	Purpose	Notes
+.xpk	EXECUE Package File	Precompiled executable opcode packet (like .jar, .pak)—compiled with hot routes, blueprints, and dominions baked.
+.xcm	EXECUE CMake File	Used for low-level assembly-based linking via EXECUE-AOT toolchain. Maps memory, ports, routes, etc.
+.vchip	Virtual Chip Map	Memory + dominion layout specification for targeted virtual architectures.
+.exp	Execution Profile	Optimized path tracking, folding maps, unrolling protocol, streamed pipeline directives.
+🔻 Diagnostics + Meta
+
+Extension	Purpose	Notes
+.xlog	Execution Log	Generated during runtime—cycle traces, dominion errors, snapshot logs.
+.errx	Static Error Blueprint	Human-readable + blueprint-mapped error tracing structure.
+.mftx	Manifest Extended	Advanced manifest with dominion binds, module checksums, opcodes, etc.
+.dbgx	Debug Extract	Compiled snapshot of runtime dominion states + system latency measures.
+.wgtf	Weighted Garbage Table File	Post-run garbage collection profiling with node weights and filtering results.
