@@ -1,0 +1,8 @@
+build_target.yaml:
+  entrypoint: "main.exu"
+  transpiler: "compile/aot_opcode_gen.exu"
+  assembler: "compile/cmake_assembler.cmk"
+  flags:
+    - optimize: hotpath
+    - fold: true
+    - delete_dead: true
